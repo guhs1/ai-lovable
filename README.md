@@ -1,3 +1,9 @@
+# md파일 수정했음. <br>
+
+- html태그를 일부 쓸 때는 한줄을 떨어지게 해야함. <br>
+
+<hr>
+
 # 스마트 가계부 대시보드
 
 Vue 3 (Composition API) + Pinia + Bootstrap 5 + Google Charts + Font Awesome + json-server + axios 로 만든 가계부 SPA입니다.
