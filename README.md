@@ -57,7 +57,7 @@ flowchart TB
   subgraph AppBoot[앱 부트스트랩]
     MAIN[main.js]
     APP[App.vue]
-    PINIA[Pinia (createPinia())]
+    PINIA["Pinia (createPinia())"]
     ROUTER[Vue Router (router/index.js)]
     MAIN --> APP
     MAIN --> PINIA
