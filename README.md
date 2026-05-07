@@ -58,7 +58,7 @@ flowchart TB
     MAIN[main.js]
     APP[App.vue]
     PINIA["Pinia (createPinia())"]
-    ROUTER[Vue Router (router/index.js)]
+    ROUTER["Vue Router (router/index.js)"]
     MAIN --> APP
     MAIN --> PINIA
     MAIN --> ROUTER
