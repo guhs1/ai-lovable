@@ -977,5 +977,13 @@
       "name": "기타",
       "type": "expense"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "demo@moneybook.com",
+      "password": "demo1234",
+      "name": "데모 사용자"
+    }
   ]
 }
