@@ -50,6 +50,51 @@ src/
    └─ AddTransaction.vue
 ```
 
+## 컴포넌트 구성도 (Mermaid)
+
+```mermaid
+flowchart TB
+  subgraph AppBoot[앱 부트스트랩]
+    MAIN[main.js]
+    APP[App.vue]
+    PINIA[Pinia (createPinia())]
+    ROUTER[Vue Router (router/index.js)]
+    MAIN --> APP
+    MAIN --> PINIA
+    MAIN --> ROUTER
+  end
+
+  subgraph Layout[레이아웃/라우팅]
+    APP --> SIDEBAR[Sidebar (nav links)]
+    APP --> RV[RouterView]
+    ROUTER --> DASH_ROUTE["/"]
+    ROUTER --> TRANS_ROUTE["/transactions"]
+    ROUTER --> ADD_ROUTE["/add"]
+    DASH_ROUTE --> DASH[Dashboard.vue]
+    TRANS_ROUTE --> TRANS[Transactions.vue]
+    ADD_ROUTE --> ADD[AddTransaction.vue]
+  end
+
+  subgraph Views[뷰 컴포넌트]
+    DASH --> TXSTORE[Pinia: transaction.js]
+    TRANS --> TXSTORE[Pinia: transaction.js]
+    ADD --> TXSTORE[Pinia: transaction.js]
+    DASH --> STATCARD[StatCard.vue]
+    DASH --> CHART[GoogleChart.vue]
+  end
+
+  subgraph DataFlow[상태/데이터 흐름]
+    TXSTORE --> API[stores/api.js (axios)]
+    API --> SERVER[(json-server)]
+    SERVER --> DB[(db.json mock)]
+  end
+
+  subgraph Charts[Google Charts]
+    CHART --> LOADER[loader.js 동적 로딩 (gstatic)]
+    LOADER --> DRAW[Google Visualization draw()]
+  end
+```
+
 ## API 엔드포인트 (json-server)
 - `GET    /transactions`
 - `POST   /transactions`
